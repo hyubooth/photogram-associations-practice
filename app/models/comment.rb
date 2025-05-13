@@ -20,4 +20,8 @@ class Comment < ApplicationRecord
   # Comment#commenter: returns a row from the users table associated to this comment by the author_id column
 
   # Comment#photo: returns a row from the photos table associated to this comment by the photo_id column
+
+  belongs_to :commenter, class_name: "User", foreign_key: "author_id", optional: true
+  belongs_to :photo, optional: true
+
 end
